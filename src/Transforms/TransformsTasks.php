@@ -11,13 +11,14 @@ trait TransformsTasks
 
     /**
      * @param \TestMonitor\Clickup\Resources\Task $task
+     *
      * @return array
      */
     protected function toClickupTask(Task $task): array
     {
         return array_filter([
             'name' => $task->name,
-            'description' => $task->description,
+            'markdown_description' => $task->description,
             'status' => $task->status?->name,
             'priority' => $task->priority,
             'dueDate' => $task->dueDate,
