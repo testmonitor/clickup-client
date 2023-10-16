@@ -35,7 +35,7 @@ class Task extends Resource
     /**
      * The description of the task.
      *
-     * @var integer
+     * @var int
      */
     public $priority;
 

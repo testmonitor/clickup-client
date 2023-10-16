@@ -28,7 +28,7 @@ class Status extends Resource
     /**
      * The order index of the status.
      *
-     * @var integer
+     * @var int
      */
     public $orderIndex;
 

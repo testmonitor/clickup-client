@@ -2,10 +2,8 @@
 
 namespace TestMonitor\Clickup\Transforms;
 
-use TestMonitor\Clickup\Resources\Folder;
-use TestMonitor\Clickup\Resources\Space;
 use TestMonitor\Clickup\Validator;
-use TestMonitor\Clickup\Resources\Workspace;
+use TestMonitor\Clickup\Resources\Folder;
 
 trait TransformsFolders
 {

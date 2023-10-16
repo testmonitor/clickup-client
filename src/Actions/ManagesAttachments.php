@@ -27,15 +27,15 @@ trait ManagesAttachments
                 'multipart' => [
                     [
                         'name' => 'attachment',
-                        'contents' => fopen($path, 'r' ),
+                        'contents' => fopen($path, 'r'),
                     ], [
                         'name' => 'filename',
                         'contents' => basename($path),
                     ], [
-                        'name' => "title",
+                        'name' => 'title',
                         'contents' => basename($path),
                     ],
-                ]
+                ],
             ]
         );
 

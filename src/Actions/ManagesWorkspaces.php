@@ -17,7 +17,7 @@ trait ManagesWorkspaces
      */
     public function workspaces()
     {
-        $response = $this->get("team");
+        $response = $this->get('team');
 
         return $this->fromClickupWorkspaces($response['teams']);
     }

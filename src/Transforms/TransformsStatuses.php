@@ -2,8 +2,8 @@
 
 namespace TestMonitor\Clickup\Transforms;
 
-use TestMonitor\Clickup\Resources\Status;
 use TestMonitor\Clickup\Validator;
+use TestMonitor\Clickup\Resources\Status;
 
 trait TransformsStatuses
 {
