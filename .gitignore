@@ -1,0 +1,16 @@
+/vendor
+composer.lock
+.DS_Store
+Thumbs.db
+
+.php_cs.cache
+
+phpunit.xml
+.phpunit.result.cache
+.phpunit.cache
+/build
+/logs
+
+/.idea
+
+src/Test.php
