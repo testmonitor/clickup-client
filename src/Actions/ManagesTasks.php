@@ -29,7 +29,7 @@ trait ManagesTasks
      * Create a new task.
      *
      * @param \TestMonitor\Clickup\Resources\Task $task
-     * @param string $projectId
+     * @param string $listId
      *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
      *
