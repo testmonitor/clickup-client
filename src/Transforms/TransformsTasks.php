@@ -11,7 +11,6 @@ trait TransformsTasks
 
     /**
      * @param \TestMonitor\Clickup\Resources\Task $task
-     *
      * @return array
      */
     protected function toClickupTask(Task $task): array
