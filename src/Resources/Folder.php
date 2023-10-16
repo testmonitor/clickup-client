@@ -21,14 +21,14 @@ class Folder extends Resource
     /**
      * The order index of the folder.
      *
-     * @var integer
+     * @var int
      */
     public $orderindex;
 
     /**
      * Indicates this folder is hidden.
      *
-     * @var boolean
+     * @var bool
      */
     public $hidden;
 

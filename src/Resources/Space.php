@@ -21,7 +21,7 @@ class Space extends Resource
     /**
      * Indicates this is a private space.
      *
-     * @var boolean
+     * @var bool
      */
     public $private;
 

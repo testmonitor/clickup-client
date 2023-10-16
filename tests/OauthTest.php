@@ -3,10 +3,9 @@
 namespace TestMonitor\Clickup\Tests;
 
 use Mockery;
-use TestMonitor\Clickup\Client;
 use PHPUnit\Framework\TestCase;
+use TestMonitor\Clickup\Client;
 use TestMonitor\Clickup\AccessToken;
-use TestMonitor\Clickup\Exceptions\TokenExpiredException;
 use TestMonitor\Clickup\Exceptions\UnauthorizedException;
 
 class OauthTest extends TestCase

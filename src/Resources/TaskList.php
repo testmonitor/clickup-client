@@ -21,7 +21,7 @@ class TaskList extends Resource
     /**
      * The order index of the list.
      *
-     * @var integer
+     * @var int
      */
     public $orderindex;
 
