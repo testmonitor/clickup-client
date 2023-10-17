@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/testmonitor/clickup-client/v/stable)](https://packagist.org/packages/testmonitor/clickup-client)
 [![CircleCI](https://img.shields.io/circleci/project/github/testmonitor/clickup-client.svg)](https://circleci.com/gh/testmonitor/clickup-client)
-[![Travis Build](https://travis-ci.com/testmonitor/clickup-client.svg?branch=main)](https://travis-ci.com/testmonitor/clickup-client)
+[![Travis Build](https://app.travis-ci.com/testmonitor/clickup-client.svg?branch=main)](https://app.travis-ci.com/github/testmonitor/clickup-client)
 [![Code Coverage](https://scrutinizer-ci.com/g/testmonitor/clickup-client/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/testmonitor/clickup-client/?branch=main)
 [![Code Quality](https://scrutinizer-ci.com/g/testmonitor/clickup-client/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/testmonitor/clickup-client/?branch=main)
 [![StyleCI](https://styleci.io/repos/705226623/shield)](https://styleci.io/repos/705226623)
