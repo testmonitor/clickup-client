@@ -27,6 +27,22 @@ trait TransformsTasks
     }
 
     /**
+     * @param array $tasks
+     *
+     * @throws \TestMonitor\Jira\Exceptions\InvalidDataException
+     *
+     * @return \TestMonitor\Jira\Resources\Task[]
+     */
+    protected function fromClickupTasks(array $tasks): array
+    {
+        Validator::isArray($tasks);
+
+        return array_map(function ($task) {
+            return $this->fromClickupTask($task);
+        }, $tasks);
+    }
+
+    /**
      * @param array $task
      *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
