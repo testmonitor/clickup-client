@@ -3,6 +3,7 @@
 namespace TestMonitor\Clickup\Actions;
 
 use TestMonitor\Clickup\Resources\Task;
+use TestMonitor\Clickup\Responses\PaginatedResponse;
 use TestMonitor\Clickup\Transforms\TransformsTasks;
 
 trait ManagesTasks
@@ -23,6 +24,28 @@ trait ManagesTasks
         $response = $this->get("task/{$id}");
 
         return $this->fromClickupTask($response);
+    }
+
+    /**
+     * Get a list of of tasks for a list.
+     *
+     * @param string $listId
+     * @param int $page
+     *
+     * @return \TestMonitor\Clickup\Responses\PaginatedResponse
+     *
+     * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
+     */
+    public function tasks(string $listId, $page = 0): PaginatedResponse
+    {
+        $response = $this->get("list/{$listId}/task", [
+            'query' => ['page' => $page],
+        ]);
+
+        return new PaginatedResponse(
+            items: $this->fromClickupTasks($response['tasks']),
+            hasMore: !$response['last_page']
+        );
     }
 
     /**

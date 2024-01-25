@@ -33,7 +33,7 @@ class Task extends Resource
     public $status;
 
     /**
-     * The description of the task.
+     * The priority for the task.
      *
      * @var int
      */
@@ -61,7 +61,7 @@ class Task extends Resource
     public $timeEstimate;
 
     /**
-     * The url for the task.
+     * The URL for the task.
      *
      * @var string
      */

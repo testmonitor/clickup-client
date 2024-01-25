@@ -32,10 +32,10 @@ trait TransformsStatuses
      */
     protected function fromClickupStatus($status): Status
     {
-        Validator::keysExists($status, ['id', 'status']);
+        Validator::keysExists($status, ['status']);
 
         return new Status([
-            'id' => $status['id'],
+            'id' => $status['id'] ?? null,
             'name' => $status['status'],
             'type' => $status['type'],
             'orderIndex' => $status['orderindex'],
