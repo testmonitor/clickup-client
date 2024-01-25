@@ -3,8 +3,8 @@
 namespace TestMonitor\Clickup\Actions;
 
 use TestMonitor\Clickup\Resources\Task;
-use TestMonitor\Clickup\Responses\PaginatedResponse;
 use TestMonitor\Clickup\Transforms\TransformsTasks;
+use TestMonitor\Clickup\Responses\PaginatedResponse;
 
 trait ManagesTasks
 {
@@ -32,9 +32,9 @@ trait ManagesTasks
      * @param string $listId
      * @param int $page
      *
+     * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
      * @return \TestMonitor\Clickup\Responses\PaginatedResponse
      *
-     * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
      */
     public function tasks(string $listId, $page = 0): PaginatedResponse
     {
@@ -44,7 +44,7 @@ trait ManagesTasks
 
         return new PaginatedResponse(
             items: $this->fromClickupTasks($response['tasks']),
-            hasMore: !$response['last_page']
+            hasMore: ! $response['last_page']
         );
     }
 
