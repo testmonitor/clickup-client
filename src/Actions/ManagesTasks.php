@@ -39,7 +39,7 @@ trait ManagesTasks
     public function tasks(string $listId, $page = 0): PaginatedResponse
     {
         $response = $this->get("list/{$listId}/task", [
-            'query' => ['page' => $page],
+            'query' => ['page' => $page, 'include_closed' => true],
         ]);
 
         return new PaginatedResponse(
