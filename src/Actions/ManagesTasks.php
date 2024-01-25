@@ -33,8 +33,8 @@ trait ManagesTasks
      * @param int $page
      *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
-     * @return \TestMonitor\Clickup\Responses\PaginatedResponse
      *
+     * @return \TestMonitor\Clickup\Responses\PaginatedResponse
      */
     public function tasks(string $listId, $page = 0): PaginatedResponse
     {
