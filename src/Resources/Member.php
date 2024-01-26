@@ -5,30 +5,30 @@ namespace TestMonitor\Clickup\Resources;
 class Member extends Resource
 {
     /**
-     * The id of the space.
+     * The id of the member.
      *
      * @var string
      */
     public $id;
 
     /**
-     * The name of the space.
+     * The user name of the member.
      *
      * @var string
      */
     public $username;
 
     /**
-     * Indicates this is a private space.
+     * The member's email address.
      *
-     * @var bool
+     * @var string
      */
     public $email;
 
     /**
-     * The statuses available for this space.
+     * The member's avatar URL.
      *
-     * @var array<\TestMonitor\Clickup\Resources\Space>
+     * @var string
      */
     public $avatarUrl;
 
@@ -42,6 +42,6 @@ class Member extends Resource
         $this->id = $attributes['id'];
         $this->username = $attributes['username'];
         $this->email = $attributes['email'];
-        $this->avatarUrl = $attributes['avatarUrl'] ?? [];
+        $this->avatarUrl = $attributes['avatarUrl'] ?? '';
     }
 }
