@@ -16,9 +16,12 @@ class Client
     use Actions\ManagesAttachments,
         Actions\ManagesFolders,
         Actions\ManagesLists,
+        Actions\ManagesMembers,
         Actions\ManagesSpaces,
-        Actions\ManagesWorkspaces,
-        Actions\ManagesTasks;
+        Actions\ManagesStatuses,
+        Actions\ManagesTags,
+        Actions\ManagesTasks,
+        Actions\ManagesWorkspaces;
 
     /**
      * @var \TestMonitor\Clickup\AccessToken
