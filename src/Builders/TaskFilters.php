@@ -109,7 +109,6 @@ class TaskFilters
      *
      * @param mixed $value
      * @param callable $callback
-     *
      * @return \TestMonitor\Clickup\Builders\TaskFilters
      */
     public function when(mixed $value, callable $callback): self
