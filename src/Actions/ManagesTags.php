@@ -12,8 +12,8 @@ trait ManagesTags
      * Get a list of tags for the provided space.
      *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
-     * @return \TestMonitor\Clickup\Resources\Tag[]
      *
+     * @return \TestMonitor\Clickup\Resources\Tag[]
      */
     public function tags($spaceId)
     {

@@ -12,8 +12,8 @@ trait ManagesStatuses
      * Get a list of available statuses for the provided space.
      *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
-     * @return \TestMonitor\Clickup\Resources\Status[]
      *
+     * @return \TestMonitor\Clickup\Resources\Status[]
      */
     public function statuses($spaceId)
     {

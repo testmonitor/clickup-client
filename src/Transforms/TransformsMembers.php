@@ -11,8 +11,8 @@ trait TransformsMembers
      * @param array $members
      *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
-     * @return \TestMonitor\Clickup\Resources\Member[]
      *
+     * @return \TestMonitor\Clickup\Resources\Member[]
      */
     protected function fromClickupMembers($members): array
     {
@@ -27,8 +27,8 @@ trait TransformsMembers
      * @param array $member
      *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
-     * @return \TestMonitor\Clickup\Resources\Member
      *
+     * @return \TestMonitor\Clickup\Resources\Member
      */
     protected function fromClickupMember($member): Member
     {

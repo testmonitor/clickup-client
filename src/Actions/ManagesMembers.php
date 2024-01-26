@@ -12,8 +12,8 @@ trait ManagesMembers
      * Get a list of available members for the provided list.
      *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
-     * @return \TestMonitor\Clickup\Resources\Member[]
      *
+     * @return \TestMonitor\Clickup\Resources\Member[]
      */
     public function members($listId)
     {

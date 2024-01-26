@@ -11,8 +11,8 @@ trait TransformsTags
      * @param array $tags
      *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
-     * @return \TestMonitor\Clickup\Resources\Tag[]
      *
+     * @return \TestMonitor\Clickup\Resources\Tag[]
      */
     protected function fromClickupTags($tags): array
     {
@@ -27,8 +27,8 @@ trait TransformsTags
      * @param array $tag
      *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
-     * @return \TestMonitor\Clickup\Resources\Tag
      *
+     * @return \TestMonitor\Clickup\Resources\Tag
      */
     protected function fromClickupTag($tag): Tag
     {
