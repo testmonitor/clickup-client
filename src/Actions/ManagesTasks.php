@@ -3,6 +3,7 @@
 namespace TestMonitor\Clickup\Actions;
 
 use TestMonitor\Clickup\Resources\Task;
+use TestMonitor\Clickup\Builders\TaskFilters;
 use TestMonitor\Clickup\Transforms\TransformsTasks;
 use TestMonitor\Clickup\Responses\PaginatedResponse;
 
@@ -30,16 +31,20 @@ trait ManagesTasks
      * Get a list of of tasks for a list.
      *
      * @param string $listId
+     * @param \TestMonitor\Clickup\Builders\TaskFilters|null $query
      * @param int $page
      *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
      *
      * @return \TestMonitor\Clickup\Responses\PaginatedResponse
      */
-    public function tasks(string $listId, $page = 0): PaginatedResponse
+    public function tasks(string $listId, ?TaskFilters $query = null, $page = 0): PaginatedResponse
     {
         $response = $this->get("list/{$listId}/task", [
-            'query' => ['page' => $page, 'include_closed' => true],
+            'query' => [
+                ...['page' => $page],
+                ...$query instanceof TaskFilters ? $query->getQuery() : (new TaskFilters)->getQuery(),
+            ],
         ]);
 
         return new PaginatedResponse(
