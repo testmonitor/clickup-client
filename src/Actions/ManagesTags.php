@@ -11,6 +11,8 @@ trait ManagesTags
     /**
      * Get a list of tags for the provided space.
      *
+     * @param string $spaceId
+     *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
      *
      * @return \TestMonitor\Clickup\Resources\Tag[]

@@ -11,6 +11,8 @@ trait ManagesStatuses
     /**
      * Get a list of available statuses for the provided space.
      *
+     * @param string $spaceId
+     *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
      *
      * @return \TestMonitor\Clickup\Resources\Status[]
