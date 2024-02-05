@@ -23,4 +23,20 @@ trait ManagesStatuses
 
         return $this->fromClickupStatuses($response['statuses']);
     }
+
+    /**
+     * Get a list of available statuses for the provided list.
+     *
+     * @param string $listId
+     *
+     * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
+     *
+     * @return \TestMonitor\Clickup\Resources\Status[]
+     */
+    public function statusesInFolder($listId)
+    {
+        $response = $this->get("list/{$listId}");
+
+        return $this->fromClickupStatuses($response['statuses']);
+    }
 }
