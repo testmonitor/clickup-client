@@ -9,17 +9,17 @@ trait ManagesStatuses
     use TransformsStatuses;
 
     /**
-     * Get a list of available statuses for the provided space.
+     * Get a list of available statuses for the provided list.
      *
-     * @param string $spaceId
+     * @param string $listId
      *
      * @throws \TestMonitor\Clickup\Exceptions\InvalidDataException
      *
      * @return \TestMonitor\Clickup\Resources\Status[]
      */
-    public function statuses($spaceId)
+    public function statuses($listId)
     {
-        $response = $this->get("space/{$spaceId}");
+        $response = $this->get("list/{$listId}");
 
         return $this->fromClickupStatuses($response['statuses']);
     }
