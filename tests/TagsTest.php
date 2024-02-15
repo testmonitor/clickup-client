@@ -28,7 +28,6 @@ class TagsTest extends TestCase
         $this->tag = [
             'name' => 'My Tag',
         ];
-
     }
 
     public function tearDown(): void

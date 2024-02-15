@@ -30,7 +30,6 @@ class TasksTest extends TestCase
             'name' => 'My Task',
             'status' => ['status' => 'FooBar'],
         ];
-
     }
 
     public function tearDown(): void
