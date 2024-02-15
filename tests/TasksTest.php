@@ -65,6 +65,30 @@ class TasksTest extends TestCase
     }
 
     /** @test */
+    public function it_should_return_a_single_task()
+    {
+        // Given
+        $clickup = new Client(['clientId' => 1, 'clientSecret' => 'secret', 'redirectUrl' => 'none'], $this->token);
+
+        $clickup->setClient($service = Mockery::mock('GuzzleHttp\Client'));
+
+        $service->shouldReceive('request')->andReturn($response = Mockery::mock('Psr\Http\Message\ResponseInterface'));
+        $response->shouldReceive('getStatusCode')->andReturn(200);
+
+        $response->shouldReceive('getBody')->andReturn(\GuzzleHttp\Psr7\Utils::streamFor(json_encode(
+            $this->task,
+        )));
+
+        // When
+        $task = $clickup->task(1);
+
+        // Then
+        $this->assertIsArray($task->toArray());
+        $this->assertInstanceOf(Task::class, $task);
+        $this->assertEquals($this->task['id'], $task->id);
+    }
+
+    /** @test */
     public function it_should_throw_an_failed_action_exception_when_client_receives_bad_request_while_getting_a_list_of_tasks()
     {
         // Given
