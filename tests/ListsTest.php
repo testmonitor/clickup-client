@@ -5,14 +5,12 @@ namespace TestMonitor\Clickup\Tests;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use TestMonitor\Clickup\Client;
-use TestMonitor\Clickup\Resources\Project;
+use TestMonitor\Clickup\Resources\TaskList;
 use TestMonitor\Clickup\Exceptions\Exception;
 use TestMonitor\Clickup\Exceptions\NotFoundException;
 use TestMonitor\Clickup\Exceptions\ValidationException;
 use TestMonitor\Clickup\Exceptions\FailedActionException;
 use TestMonitor\Clickup\Exceptions\UnauthorizedException;
-use TestMonitor\Clickup\Resources\List;
-use TestMonitor\Clickup\Resources\TaskList;
 
 class ListsTest extends TestCase
 {
@@ -52,7 +50,7 @@ class ListsTest extends TestCase
         $response->shouldReceive('getStatusCode')->andReturn(200);
 
         $response->shouldReceive('getBody')->andReturn(\GuzzleHttp\Psr7\Utils::streamFor(json_encode([
-            'lists' => [$this->list]
+            'lists' => [$this->list],
         ])));
 
         // When

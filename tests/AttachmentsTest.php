@@ -3,15 +3,9 @@
 namespace TestMonitor\Clickup\Tests;
 
 use Mockery;
-use Clickup\Errors\NotFoundError;
 use PHPUnit\Framework\TestCase;
-use Clickup\Errors\NoAuthorizationError;
-use GuzzleHttp\Client as GuzzleHttpClient;
-use TestMonitor\Clickup\AccessToken;
 use TestMonitor\Clickup\Client;
 use TestMonitor\Clickup\Resources\Attachment;
-use TestMonitor\Clickup\Exceptions\NotFoundException;
-use TestMonitor\Clickup\Exceptions\UnauthorizedException;
 
 class AttachmentsTest extends TestCase
 {

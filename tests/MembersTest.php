@@ -5,13 +5,12 @@ namespace TestMonitor\Clickup\Tests;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use TestMonitor\Clickup\Client;
-use TestMonitor\Clickup\Resources\Project;
+use TestMonitor\Clickup\Resources\Member;
 use TestMonitor\Clickup\Exceptions\Exception;
 use TestMonitor\Clickup\Exceptions\NotFoundException;
 use TestMonitor\Clickup\Exceptions\ValidationException;
 use TestMonitor\Clickup\Exceptions\FailedActionException;
 use TestMonitor\Clickup\Exceptions\UnauthorizedException;
-use TestMonitor\Clickup\Resources\Member;
 
 class MembersTest extends TestCase
 {
@@ -28,10 +27,9 @@ class MembersTest extends TestCase
 
         $this->member = [
             'id' => '1',
-            'username' =>
-            'Clicky Up',
+            'username' => 'Clicky Up',
             'email' => 'email@testmonitor.com',
-            'profilePicture' => 'https://image.com'
+            'profilePicture' => 'https://image.com',
         ];
     }
 
@@ -52,7 +50,7 @@ class MembersTest extends TestCase
         $response->shouldReceive('getStatusCode')->andReturn(200);
 
         $response->shouldReceive('getBody')->andReturn(\GuzzleHttp\Psr7\Utils::streamFor(json_encode([
-            'members' => [$this->member]
+            'members' => [$this->member],
         ])));
 
         // When
