@@ -31,7 +31,6 @@ class FoldersTest extends TestCase
             'orderIndex' => 1,
             'hidden' => 1,
         ];
-
     }
 
     public function tearDown(): void

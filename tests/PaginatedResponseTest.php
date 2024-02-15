@@ -11,7 +11,7 @@ class PaginatedResponseTest extends TestCase
     public function it_should_has_a_default_page_limit_of_100()
     {
         // Given
-        $repsonse = new PaginatedResponse([0 => 'Foo', 1 =>'Bar']);
+        $repsonse = new PaginatedResponse([0 => 'Foo', 1 => 'Bar']);
 
         // When
         $result = $repsonse->perPage();

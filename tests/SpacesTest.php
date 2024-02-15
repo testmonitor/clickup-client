@@ -31,7 +31,6 @@ class SpacesTest extends TestCase
             'private' => '123456',
             'statuses' => [],
         ];
-
     }
 
     public function tearDown(): void

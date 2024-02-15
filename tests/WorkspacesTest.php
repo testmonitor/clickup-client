@@ -31,7 +31,6 @@ class WorkspacesTest extends TestCase
             'color' =>'123456',
             'avatar' => 'avatar.jpg',
         ];
-
     }
 
     public function tearDown(): void

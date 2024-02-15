@@ -30,7 +30,6 @@ class ListsTest extends TestCase
             'name' => 'My Documents',
             'orderIndex' => 1,
         ];
-
     }
 
     public function tearDown(): void

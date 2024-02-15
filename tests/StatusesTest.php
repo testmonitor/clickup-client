@@ -32,7 +32,6 @@ class StatusesTest extends TestCase
             'orderIndex' => 1,
             'color' => 'aabbcc',
         ];
-
     }
 
     public function tearDown(): void
