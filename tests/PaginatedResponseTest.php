@@ -24,7 +24,7 @@ class PaginatedResponseTest extends TestCase
     public function it_should_contains_an_array_of_items()
     {
         // Given
-        $repsonse = new PaginatedResponse([0 => 'Foo', 1 =>'Bar']);
+        $repsonse = new PaginatedResponse([0 => 'Foo', 1 => 'Bar']);
 
         // When
         $result = $repsonse->items();
@@ -38,7 +38,7 @@ class PaginatedResponseTest extends TestCase
     public function it_should_determines_there_are_more_items()
     {
         // Given
-        $repsonse = new PaginatedResponse([0 => 'Foo', 1 =>'Bar'], true);
+        $repsonse = new PaginatedResponse([0 => 'Foo', 1 => 'Bar'], true);
 
         // When
         $result = $repsonse->hasMore();

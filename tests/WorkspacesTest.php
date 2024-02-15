@@ -28,7 +28,7 @@ class WorkspacesTest extends TestCase
         $this->workspace = [
             'id' => 1,
             'name' => 'Into Space',
-            'color' =>'123456',
+            'color' => '123456',
             'avatar' => 'avatar.jpg',
         ];
     }
