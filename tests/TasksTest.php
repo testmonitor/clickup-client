@@ -57,11 +57,11 @@ class TasksTest extends TestCase
         $tasks = $clickup->tasks(1);
 
         // Then
-        $this->assertIsArray($tasks);
+        $this->assertIsArray($tasks->items());
         $this->assertCount(1, $tasks->items());
-        $this->assertInstanceOf(Task::class, $tasks[0]);
-        $this->assertEquals($this->task['id'], $tasks[0]->id);
-        $this->assertIsArray($tasks[0]->toArray());
+        $this->assertInstanceOf(Task::class, $tasks->items()[0]);
+        $this->assertEquals($this->task['id'], $tasks->items()[0]->id);
+        $this->assertIsArray($tasks->items()[0]->toArray());
     }
 
     /** @test */
