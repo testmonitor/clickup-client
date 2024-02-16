@@ -18,8 +18,8 @@ class PaginatedResponseTest extends TestCase
 
         // Then
         $this->assertCount(2, $result);
-        $this->assertIsArray( $result);
-        $this->assertEquals( 'Foo', $result[0]);
+        $this->assertIsArray($result);
+        $this->assertEquals('Foo', $result[0]);
     }
 
     /** @test */
