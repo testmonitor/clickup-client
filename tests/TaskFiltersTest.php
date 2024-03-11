@@ -8,7 +8,7 @@ use TestMonitor\Clickup\Builders\TaskFilters;
 class TaskFiltersTest extends TestCase
 {
     /** @test */
-    public function it_should_parse_assignees_filter()
+    public function it_should_build_an_assignees_filter()
     {
         // Given
         $filter = new TaskFilters();
@@ -24,7 +24,7 @@ class TaskFiltersTest extends TestCase
     }
 
     /** @test */
-    public function it_should_parse_include_closed_filter()
+    public function it_should_build_a_filter_that_includes_closed_tasks()
     {
         // Given
         $filter = new TaskFilters();
@@ -40,7 +40,7 @@ class TaskFiltersTest extends TestCase
     }
 
     /** @test */
-    public function it_should_parse_include_subtasks_filter()
+    public function it_should_build_a_filter_that_includes_subtasks_tasks()
     {
         // Given
         $filter = new TaskFilters();
@@ -56,7 +56,7 @@ class TaskFiltersTest extends TestCase
     }
 
     /** @test */
-    public function it_should_parse_statuses_filter()
+    public function it_should_build_an_statuses_filter()
     {
         // Given
         $filter = new TaskFilters();
@@ -72,7 +72,7 @@ class TaskFiltersTest extends TestCase
     }
 
     /** @test */
-    public function it_should_parse_tags_filter()
+    public function it_should_build_an_tags_filter()
     {
         // Given
         $filter = new TaskFilters();
@@ -88,7 +88,7 @@ class TaskFiltersTest extends TestCase
     }
 
     /** @test */
-    public function it_should_apply_conditional_filtering()
+    public function it_should_build_a_filter_using_conditions()
     {
         // Given
         $filter = new TaskFilters();
