@@ -6,6 +6,7 @@ use Mockery;
 use PHPUnit\Framework\TestCase;
 use TestMonitor\Clickup\Client;
 use TestMonitor\Clickup\Resources\Task;
+use TestMonitor\Clickup\Builders\TaskFilters;
 use TestMonitor\Clickup\Exceptions\Exception;
 use TestMonitor\Clickup\Exceptions\NotFoundException;
 use TestMonitor\Clickup\Exceptions\ValidationException;
@@ -54,6 +55,33 @@ class TasksTest extends TestCase
 
         // When
         $tasks = $clickup->tasks(1);
+
+        // Then
+        $this->assertIsArray($tasks->items());
+        $this->assertCount(1, $tasks->items());
+        $this->assertInstanceOf(Task::class, $tasks->items()[0]);
+        $this->assertEquals($this->task['id'], $tasks->items()[0]->id);
+        $this->assertIsArray($tasks->items()[0]->toArray());
+    }
+
+    /** @test */
+    public function it_should_apply_the_include_closed_tasks_filter()
+    {
+        // Given
+        $clickup = new Client(['clientId' => 1, 'clientSecret' => 'secret', 'redirectUrl' => 'none'], $this->token);
+
+        $clickup->setClient($service = Mockery::mock('GuzzleHttp\Client'));
+
+        $service->shouldReceive('request')->andReturn($response = Mockery::mock('Psr\Http\Message\ResponseInterface'));
+        $response->shouldReceive('getStatusCode')->andReturn(200);
+
+        $response->shouldReceive('getBody')->andReturn(\GuzzleHttp\Psr7\Utils::streamFor(json_encode([
+            'tasks' => [$this->task],
+        ])));
+
+        // When
+        $filters = new TaskFilters();
+        $tasks = $clickup->tasks(1, $filters->includeClosed());
 
         // Then
         $this->assertIsArray($tasks->items());
