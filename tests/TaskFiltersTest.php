@@ -56,7 +56,7 @@ class TaskFiltersTest extends TestCase
     }
 
     /** @test */
-    public function it_should_build_an_statuses_filter()
+    public function it_should_build_a_statuses_filter()
     {
         // Given
         $filter = new TaskFilters();
@@ -72,7 +72,7 @@ class TaskFiltersTest extends TestCase
     }
 
     /** @test */
-    public function it_should_build_an_tags_filter()
+    public function it_should_build_a_tags_filter()
     {
         // Given
         $filter = new TaskFilters();
