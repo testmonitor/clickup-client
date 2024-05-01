@@ -20,7 +20,7 @@ class AttachmentsTest extends TestCase
         $this->token = Mockery::mock('\TestMonitor\Clickup\AccessToken');
         $this->token->shouldReceive('expired')->andReturnFalse();
 
-        $this->attachment = (object) ['id' => 1, 'url' => 'https://clickup/logo.png'];
+        $this->attachment = (object) ['id' => 1, 'url' => 'https://clickup/logo.png', 'title' => 'Attachment'];
     }
 
     public function tearDown(): void

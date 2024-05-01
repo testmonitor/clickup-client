@@ -29,7 +29,7 @@ class StatusesTest extends TestCase
             'id' => 1,
             'status' => 'My Status',
             'type' => 'my-type',
-            'orderIndex' => 1,
+            'orderindex' => 1,
             'color' => 'aabbcc',
         ];
     }

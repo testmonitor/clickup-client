@@ -28,7 +28,7 @@ class FoldersTest extends TestCase
         $this->folder = [
             'id' => 1,
             'name' => 'My Documents',
-            'orderIndex' => 1,
+            'orderindex' => 1,
             'hidden' => 1,
         ];
     }

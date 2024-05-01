@@ -29,7 +29,12 @@ class TasksTest extends TestCase
         $this->task = [
             'id' => 1,
             'name' => 'My Task',
-            'status' => ['status' => 'FooBar'],
+            'status' => [
+                'status' => 'My Status',
+                'type' => 'my-type',
+                'orderindex' => 1,
+                'color' => 'aabbcc',
+            ],
         ];
     }
 
@@ -51,6 +56,7 @@ class TasksTest extends TestCase
 
         $response->shouldReceive('getBody')->andReturn(\GuzzleHttp\Psr7\Utils::streamFor(json_encode([
             'tasks' => [$this->task],
+            'last_page' => true,
         ])));
 
         // When
@@ -77,6 +83,7 @@ class TasksTest extends TestCase
 
         $response->shouldReceive('getBody')->andReturn(\GuzzleHttp\Psr7\Utils::streamFor(json_encode([
             'tasks' => [$this->task],
+            'last_page' => true,
         ])));
 
         // When

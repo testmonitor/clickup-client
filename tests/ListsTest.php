@@ -28,7 +28,8 @@ class ListsTest extends TestCase
         $this->list = [
             'id' => 1,
             'name' => 'My Documents',
-            'orderIndex' => 1,
+            'orderindex' => 1,
+            'color' => 'aabbcc',
         ];
     }
 

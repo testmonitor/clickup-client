@@ -30,6 +30,7 @@ class SpacesTest extends TestCase
             'name' => 'My Space',
             'private' => '123456',
             'statuses' => [],
+            'color' => 'aabbcc',
         ];
     }
 
