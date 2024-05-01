@@ -8,7 +8,6 @@ use League\OAuth2\Client\Provider\GenericProvider;
 use TestMonitor\Clickup\Exceptions\NotFoundException;
 use TestMonitor\Clickup\Exceptions\ValidationException;
 use TestMonitor\Clickup\Exceptions\FailedActionException;
-use TestMonitor\Clickup\Exceptions\TokenExpiredException;
 use TestMonitor\Clickup\Exceptions\UnauthorizedException;
 
 class Client
@@ -100,7 +99,7 @@ class Client
      * Returns an Guzzle client instance.
      *
      * @throws \TestMonitor\Clickup\Exceptions\UnauthorizedException
-     * @throws TokenExpiredException
+     * @throws \TestMonitor\Clickup\Exceptions\TokenExpiredException
      *
      * @return \GuzzleHttp\Client
      */
@@ -239,15 +238,15 @@ class Client
         }
 
         if ($response->getStatusCode() == 404) {
-            throw new NotFoundException();
+            throw new NotFoundException((string) $response->getBody(), $response->getStatusCode());
         }
 
         if ($response->getStatusCode() == 401 || $response->getStatusCode() == 403) {
-            throw new UnauthorizedException((string) $response->getBody());
+            throw new UnauthorizedException((string) $response->getBody(), $response->getStatusCode());
         }
 
         if ($response->getStatusCode() == 400) {
-            throw new FailedActionException((string) $response->getBody());
+            throw new FailedActionException((string) $response->getBody(), $response->getStatusCode());
         }
 
         throw new Exception((string) $response->getStatusCode());
