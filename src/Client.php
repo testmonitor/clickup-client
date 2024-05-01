@@ -106,7 +106,7 @@ class Client
     protected function client()
     {
         if (empty($this->token)) {
-            throw new UnauthorizedException('Invalid access token');
+            throw new UnauthorizedException();
         }
 
         return $this->client ?? new \GuzzleHttp\Client([
