@@ -26,6 +26,7 @@ class TagsTest extends TestCase
         $this->token->shouldReceive('expired')->andReturnFalse();
 
         $this->tag = [
+            'id' => 1,
             'name' => 'My Tag',
         ];
     }
@@ -57,7 +58,7 @@ class TagsTest extends TestCase
         $this->assertIsArray($tags);
         $this->assertCount(1, $tags);
         $this->assertInstanceOf(Tag::class, $tags[0]);
-        $this->assertEquals($this->tag['id'], $tags[0]->id);
+        $this->assertEquals($this->tag['name'], $tags[0]->name);
         $this->assertIsArray($tags[0]->toArray());
     }
 
@@ -89,7 +90,7 @@ class TagsTest extends TestCase
 
         $service->shouldReceive('request')->once()->andReturn($response = Mockery::mock('Psr\Http\Message\ResponseInterface'));
         $response->shouldReceive('getStatusCode')->andReturn(404);
-        $response->shouldReceive('getBody')->andReturnNull();
+        $response->shouldReceive('getBody')->andReturn(\GuzzleHttp\Psr7\Utils::streamFor());
 
         $this->expectException(NotFoundException::class);
 
