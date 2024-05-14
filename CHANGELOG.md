@@ -8,6 +8,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Updated
 - Improved exception handling
 
-## [1.0.0] - 2023-10-30
+## [1.0.0] - 2024-04-10
 ### Added
 - Initial version.

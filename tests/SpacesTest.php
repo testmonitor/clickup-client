@@ -30,6 +30,7 @@ class SpacesTest extends TestCase
             'name' => 'My Space',
             'private' => '123456',
             'statuses' => [],
+            'color' => 'aabbcc',
         ];
     }
 
@@ -92,7 +93,7 @@ class SpacesTest extends TestCase
 
         $service->shouldReceive('request')->once()->andReturn($response = Mockery::mock('Psr\Http\Message\ResponseInterface'));
         $response->shouldReceive('getStatusCode')->andReturn(404);
-        $response->shouldReceive('getBody')->andReturnNull();
+        $response->shouldReceive('getBody')->andReturn(\GuzzleHttp\Psr7\Utils::streamFor());
 
         $this->expectException(NotFoundException::class);
 
