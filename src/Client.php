@@ -51,8 +51,8 @@ class Client
      */
     public function __construct(
         array $credentials,
-        AccessToken $token = null,
-        GenericProvider $provider = null
+        ?AccessToken $token = null,
+        ?GenericProvider $provider = null
     ) {
         $this->token = $token;
 
