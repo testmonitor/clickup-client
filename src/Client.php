@@ -30,7 +30,7 @@ class Client
     /**
      * @var string
      */
-    protected $baseUrl = 'https://api.clickup.com/api/v2/';
+    protected $baseUrl = 'https://api.clickup.com/api/v2';
 
     /**
      * @var \GuzzleHttp\Client
