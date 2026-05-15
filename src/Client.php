@@ -30,7 +30,7 @@ class Client
     /**
      * @var string
      */
-    protected $baseUrl = 'https://api.clickup.com/api/v2/';
+    protected $baseUrl = 'https://api.clickup.com/api/v2';
 
     /**
      * @var \GuzzleHttp\Client
@@ -51,8 +51,8 @@ class Client
      */
     public function __construct(
         array $credentials,
-        AccessToken $token = null,
-        GenericProvider $provider = null
+        ?AccessToken $token = null,
+        ?GenericProvider $provider = null
     ) {
         $this->token = $token;
 
