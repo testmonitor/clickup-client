@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.0] - 2026-05-18
+### Updated
+- Replaced Travis / Scrutinizer with Codecov
+- Removed trailing slash in base URL
+
 ## [1.1.0] - 2024-05-14
 ### Updated
 - Improved exception handling
